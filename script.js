@@ -1,1 +1,1 @@
-document.querySelectorAll('.obra').forEach((obra,index)=>{obra.addEventListener('click',()=>{obra.style.transform='scale(1.02)';setTimeout(()=>obra.style.transform='',180)})});
+const abas=document.querySelectorAll('.abas button');const personagens=document.querySelectorAll('.personagem');abas.forEach(aba=>{aba.addEventListener('click',()=>{const id=aba.dataset.personagem;abas.forEach(a=>a.classList.remove('ativa'));personagens.forEach(p=>p.classList.remove('ativo'));aba.classList.add('ativa');document.getElementById(id).classList.add('ativo')})});
