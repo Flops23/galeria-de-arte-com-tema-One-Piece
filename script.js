@@ -3,7 +3,7 @@ const personagens=document.querySelectorAll('.personagem');
 abas.forEach(aba=>{aba.addEventListener('click',()=>{const id=aba.dataset.personagem;abas.forEach(a=>a.classList.remove('ativa'));personagens.forEach(p=>p.classList.remove('ativo'));aba.classList.add('ativa');document.getElementById(id).classList.add('ativo')})});
 
 // Carrega automaticamente imagens dos Chapéus de Palha.
-// A API Jikan fornece imagens públicas associadas aos personagens de One Piece.
+// A API Jikan fornece as imagens associadas aos personagens de One Piece.
 const nomesImagem = {
   luffy: 'Monkey D. Luffy',
   zoro: 'Roronoa Zoro',
@@ -41,7 +41,6 @@ async function carregarImagensOnePiece(){
 
 const imagensGaleria = {
   tripulacao: 'https://www.weareplaystation.fr/api/upload/media/post/0004/58/36ff9950cc670ca5e6b770375ba58762e9fb829d.jpg',
-  sunny: 'https://www.pinterest.com/pin/711709547362022998/',
   oda: 'https://www.mangaspace.fr/wp-content/uploads/2025/09/Eiichiro-Oda-parcours-manga-et-distinctions-1.jpg'
 };
 
@@ -59,14 +58,14 @@ const momentos = document.querySelectorAll('.momento img');
 const imagensMomentos = [
   imagensGaleria.tripulacao,
   'https://www.slashfilm.com/img/gallery/the-correct-order-to-watch-one-piece-including-the-movies/intro-1724688902.jpg',
-  'https://www.weareplaystation.fr/api/upload/media/post/0004/58/36ff9950cc670ca5e6b770375ba58762e9fb829d.jpg',
-  'https://wall.alphacoders.com/big.php?i=911401'
+  imagensGaleria.oda,
+  imagensGaleria.tripulacao
 ];
 momentos.forEach((img,index)=>{if(imagensMomentos[index]) img.src=imagensMomentos[index];});
 
 const artes = document.querySelectorAll('.foto img');
 artes.forEach((img,index)=>{
-  img.src = index === 0 ? imagensGaleria.tripulacao : index === 1 ? imagensGaleria.oda : imagensGaleria.tripulacao;
+  img.src = index === 1 ? imagensGaleria.oda : imagensGaleria.tripulacao;
 });
 
 carregarImagensOnePiece();
